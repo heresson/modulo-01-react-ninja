@@ -1,16 +1,16 @@
 'use strict'
 
-import React from 'react'
+import React, {Component} from 'react'
 import Title from './title'
 
-var App = React.createClass({
-  render: function () {
+class App extends Component {
+  render () {
     return (
       <div className='container'>
-        <Title name='Heresson' lastname='Mendes' />
+        <Title name='Heresson' />
       </div>
     )
   }
-})
+}
 
 export default App

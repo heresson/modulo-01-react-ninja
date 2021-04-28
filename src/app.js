@@ -2,14 +2,28 @@
 
 import React, {Component} from 'react'
 import Square from './square'
+import Button from './button'
 
 class App extends Component {
+  constructor () {
+    super()
+    this.state = {
+      color: 'green'
+    }
+  }
+
   render () {
     return (
-      <div className='container' onClick={function (e) {
-        alert('clicou')
-      }}>
-        <Square />
+      <div>
+        <Square color={this.state.color} />
+
+        {['red', 'purple', 'blue'].map((color) => (
+          <Button
+            key={color}
+            handleClick={() => this.setState({ color })}>
+            {color}
+          </Button>
+        ))}
       </div>
     )
   }
